@@ -7,11 +7,21 @@
 - git aliases
 
 ## Installation
+
+### Dotfiles
 ```sh
 $ git clone https://github.com/derindutz/dotfiles.git ~/dotfiles
 $ cd ~/dotfiles
 $ chmod +x setup.sh
 $ ./setup.sh
+```
+
+### OS X Defaults
+```sh
+$ git clone https://github.com/derindutz/dotfiles.git ~/dotfiles
+$ cd ~/dotfiles
+$ chmod +x osx/set-defaults.sh
+$ ./osx/set-defaults.sh
 ```
 
 ## Customize
