@@ -1,0 +1,12 @@
+[branch]
+	autosetuprebase = always
+[core]
+	editor = code --wait
+[hooks]
+	prependbranchname = true
+[push]
+	default = upstream
+
+# Use separate file for username / github token / etc
+[include]
+    path = ~/.gitconfig.local

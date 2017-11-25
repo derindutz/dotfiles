@@ -1,0 +1,31 @@
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+
+# mv, rm, cp
+alias mv='mv -v'
+alias rm='rm -i -v'
+alias cp='cp -v'
+
+# Trim new lines and copy to clipboard
+alias trimcopy="tr -d '\n' | pbcopy"
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en1"
+alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | awk '{print \$2}'"
+
+################################################################################
+# Git
+################################################################################
+
+alias g="git"
+alias gb="git branch"
+
+function gf() { git checkout -b "$1" origin/master }
+alias gf="gf"
+
+alias gs="git switch"
+_git # Run git so that __git_branch_names function is loaded below
+compdef __git_branch_names git switch
