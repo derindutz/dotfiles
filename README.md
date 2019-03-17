@@ -5,6 +5,7 @@
 - [OS X defaults](osx/set-defaults.sh)
 - zsh aliases
 - git aliases
+- z (better cd)
 
 ## Installation
 
