@@ -136,16 +136,14 @@ done
 SCRIPT_DIR="$(cd "$(dirname "$0")"; pwd -P)"
 DOTFILES_DIR="$(dirname "$SCRIPT_DIR")"
 
-
-dir=~/dotfiles                        # dotfiles directory
-dir_backup=~/dotfiles_old             # old dotfiles backup directory
-
 # Get current dir (so run this script from anywhere)
 
 export DOTFILES_DIR
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+dir=$DOTFILES_DIR
 
 # Create dotfiles_old in homedir
+dir_backup=~/dotfiles_old             # old dotfiles backup directory
 echo -n "Creating $dir_backup for backup of any existing dotfiles in ~..."
 mkdir -p $dir_backup
 echo "done"
@@ -174,7 +172,7 @@ for i in ${FILES_TO_SYMLINK[@]}; do
   mv ~/.${i##*/} ~/dotfiles_old/
 done
 
-main() {
+symlink_dotfiles() {
 
   local i=''
   local sourceFile=''
@@ -204,4 +202,13 @@ main() {
   unset FILES_TO_SYMLINK
 }
 
-main
+symlink_dotfiles
+
+# Install Z
+mkd ~/.z
+cd ~/.z
+curl -fSSL -O https://raw.githubusercontent.com/rupa/z/master/z.sh
+cd -
+
+# Install Oh My Zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

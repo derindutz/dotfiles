@@ -3,9 +3,8 @@
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-# mv, rm, cp
+# mv, cp
 alias mv='mv -v'
-alias rm='rm -i -v'
 alias cp='cp -v'
 
 # Trim new lines and copy to clipboard
