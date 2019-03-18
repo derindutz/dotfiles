@@ -155,6 +155,7 @@ echo "done"
 
 declare -a FILES_TO_SYMLINK=(
 
+  'shell/bash_profile'
   'shell/shell_aliases'
   'shell/shell_exports'
   'shell/shell_functions'
@@ -204,11 +205,8 @@ symlink_dotfiles() {
 
 symlink_dotfiles
 
-# Install Z
-mkd ~/.z
-cd ~/.z
-curl -fSSL -O https://raw.githubusercontent.com/rupa/z/master/z.sh
-cd -
+# Install nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
