@@ -12,8 +12,10 @@ ZSH_THEME="clean"
 
 plugins=(git)
 
-# User configuration
+# Fix folder permission issue. From https://github.com/ohmyzsh/ohmyzsh/issues/6835#issuecomment-390216875
+ZSH_DISABLE_COMPFIX="true"
 
+# User configuration
 source $ZSH/oh-my-zsh.sh
 
 # Load the shell dotfiles

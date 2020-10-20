@@ -3,6 +3,9 @@
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+# clear
+alias c='clear'
+
 # mv, cp
 alias mv='mv -v'
 alias cp='cp -v'
@@ -20,11 +23,14 @@ alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | awk '{print \$2}'"
 ################################################################################
 
 alias g="git"
-alias gb="git branch"
-
-function gf() { git checkout -b "$1" origin/master }
-alias gf="gf"
-
-alias gs="git switch"
-_git # Run git so that __git_branch_names function is loaded below
-compdef __git_branch_names git switch
+alias gs="git status"
+alias gl="git log"
+alias gp="git pull"
+alias ga="git add ."
+alias gc="git commit"
+alias gca="git commit -am"
+alias gcn="git add . && git commit -am 'NOCOMMIT'"
+alias gk="git checkout"
+alias gkm="git checkout master"
+alias grm="git rebase master"
+alias gr="git reset HEAD~"
