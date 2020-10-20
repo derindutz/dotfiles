@@ -22,7 +22,7 @@ $ ./setup.sh
 $ git clone https://github.com/derindutz/dotfiles.git ~/dotfiles
 $ cd ~/dotfiles
 $ chmod +x osx/set-defaults.sh
-$ ./osx/set-defaults.sh
+$ sudo ./osx/set-defaults.sh
 ```
 
 ## Customize
